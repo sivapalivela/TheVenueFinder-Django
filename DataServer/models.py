@@ -1,6 +1,8 @@
 from mongoengine import *
-# Create your models here.
-connect('FortinetDB',username='ShivaKumar', password='AMDInstagram', authentication_source='FortinetDB')
+
+#The below function connects to FortinetDB Database on Atlas Cluster.
+connect(db='FortinetDB',host="mongodb+srv://ShivaKumar:AMDInstagram@fortinetdb-i8rsn.azure.mongodb.net/FortinetDB?retryWrites=true")
+
 
 class GetData(Document):
     Restaurant_ID = LongField()

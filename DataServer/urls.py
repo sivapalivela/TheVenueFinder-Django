@@ -3,9 +3,12 @@ from DataServer import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-    path('apiget/', views.getDataList.as_view()),
-    path('apipost/<str:id>',views.getData_expt_get.as_view()),
-    # path('mongo_auth/', include('mongo_auth.urls')),
+    path('api/getjson/', views.GetJsonData.as_view()),
+    path('api/post/<str:id>',views.GetDatabyId.as_view()),
+    path('api/get/requestedjson',views.GetFilterList.as_view()),
+    path('api/ratingsjson',views.GetDatabyRating.as_view()),
+    path('api/votesjson',views.GetDatabyVotes.as_view()),
+    path('api/avgcostjson',views.GetDatabyAvgCost.as_view())
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
